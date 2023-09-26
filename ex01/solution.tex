@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\author{Madhukara S Holla}
+\title{Statistics Exercise 1}
+\date{25th September 2023}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{Question 1.a}
+\includegraphics[width=\linewidth]{graph1a}
+
+\subsubsection*{Key Observation}
+
+\subsubsection*{Normal Distribution - \(\mathcal{N}(0, 1)\)}
+\begin{itemize}
+    \item Has a narrow curve due to low variance, resulting in a high probability
+    density around the mean (0).
+    \item It has shorter tails - samples drawn from this distribution will be closer
+    to the mean.
+    \item Does not have long tails - chances of drawing extreme values are low.
+\end{itemize}
+
+\subsubsection*{Normal Distribution - \(\mathcal{N}(3, 5)\)}
+In comparison with \(\mathcal{N}(0, 1)\),
+\begin{itemize}
+    \item Has a wider curve due to high variance, resulting in a lower probability
+    density around the mean (3).
+    \item It has longer tails - a significant number of samples drawn from this
+    distribution can be away from the mean (due to high variance).
+    \item Tails are slightly longer than \(\mathcal{N}(0, 1)\), but chances of
+    drawing extreme values are still low.
+\end{itemize}
+
+\subsubsection*{Cauchy Distribution - \(Cauchy(-2, 2)\)}
+\begin{itemize}
+    \item Has a narrower curve when compared to \(\mathcal{N}(3, 5)\) and has
+    longer tails.
+    \item This distribution is not symmetric and does not have a mean or variance.
+    \item Chances of drawing extreme values are higher when compared to Normal distribution.
+\end{itemize}
+
+\newpage
+\section*{Question 1.c}
+\subsubsection*{QQ plot for samples from \(\mathcal{N}(0, 1)\)}
+\includegraphics*[width=\linewidth]{graph1c}
+From the QQ plot,
+\begin{itemize}
+    \item We can observe that the samples drawn from \(\mathcal{N}(0, 1)\)
+closely align with the theoretical quantiles of normal distribution.
+    \item They form a straight line, indicating that the samples are normally
+    distributed.
+\end{itemize}
+
+\newpage
+\section*{Question 1.d}
+\subsubsection*{QQ plot for samples from \(\mathcal{N}(3, 5)\)}
+\includegraphics*[width=\linewidth]{graph1d}
+From the QQ plot,
+\begin{itemize}
+    \item We can observe that the samples drawn from \(\mathcal{N}(3, 5)\)
+closely align with the theoretical quantiles of normal distribution.
+    \item We can see a few points away from the straight line in the plot.
+    This is because of the high variance in the distribution.
+    \item Ignoring a few outliers, the samples are closer to a straight line,
+    indicating that the samples are normally distributed.
+\end{itemize}
+
+\newpage
+\section*{Question 1.e}
+\subsubsection*{QQ plot for samples from \(Cauchy(-2, 2)\)}
+\includegraphics[width=\linewidth]{graph1e}
+From the QQ plot,
+\begin{itemize}
+    \item We can observe that the samples drawn from \(Cauchy(-2, 2)\) do not form
+    a straight line - indicating that the samples are not normally distributed.
+    \item In addition, we can see multiple outliers in the plot - indicating a
+    longer tail.
+\end{itemize}
+\end{document}
