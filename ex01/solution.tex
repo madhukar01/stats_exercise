@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{amssymb}
 \graphicspath{ {./images/} }
 
 \author{Madhukara S Holla}
@@ -120,4 +121,51 @@ one degree of freedom.
 \newpage
 \section*{4.a}
 \includegraphics*{graph4a}
+\\
+The plot above shows two datasets sampled from the same distribution
+\(Y = 5 + 3.X + \varepsilon\). \(\varepsilon \thicksim \mathcal{N}(0, 1)\)
+\\
+\begin{itemize}
+    \item Both datasets are similar and have a linear relationship.
+    \item They have a similar slope and intercept.
+    \item There is a small difference between each data point of either dataset
+    due to the error term \(\varepsilon\).
+    \item The value of error term \(\varepsilon\) is different for each dataset
+    as they are drawn independently from the same distribution.
+\end{itemize}
+
+\section*{4.b}
+Values obtained for dataset 1: \(slope = 2.942\) and \(intercept = 4.856\)
+\\
+Values obtained for dataset 2: \(slope = 2.951\) and \(intercept = 5.121\)
+\\
+\begin{itemize}
+    \item The outputs are slightly different between the two datasets due to
+    the random noise \(\varepsilon\) in generating the data.
+    \item The value of error term is different for each dataset as they are
+    drawn independently.
+    \item This randomness causes the estimated slope to deviate slightly from
+    the true value of 3 in each dataset.
+\end{itemize}
+
+\newpage
+\section*{5.a}
+\includegraphics*[width=\linewidth]{graph5a}
+\begin{itemize}
+    \item From the figure above, we can see that the distribution of sample mean
+    is approximately normal regardless of the population distribution.
+    \item Between sample sizes of 3 and 5, we can see that the sample distribution
+    is approximately normal (somewhat retains the shape of the population distribution).
+    \item As the sample size increases, the sample distribution becomes more
+    normal and the shape of the population distribution is lost.
+    \item This is because the sample mean is an unbiased estimator of the population
+    mean and the Central Limit Theorem states that the distribution of sample
+    means is approximately normal regardless of the population distribution.
+    \item Additionally, we can see that the high variance of the sample distribution
+    decreases drastically as the sample size increases.
+    \item This is because the more data we sample, the denominator of the sample
+    variance increases, but the numerator does not increase by as much (because
+    the sample mean remains closer to the population mean).
+
+\end{itemize}
 \end{document}
