@@ -2,6 +2,8 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{caption}
+\captionsetup{labelformat=empty}
 \graphicspath{ {./images/} }
 
 \author{Madhukara S Holla}
@@ -166,6 +168,100 @@ Values obtained for dataset 2: \(slope = 2.951\) and \(intercept = 5.121\)
     \item This is because the more data we sample, the denominator of the sample
     variance increases, but the numerator does not increase by as much (because
     the sample mean remains closer to the population mean).
+\end{itemize}
 
+\newpage
+\section*{5.e}
+\includegraphics*[width=\linewidth]{graph5b}
+Plot from data sampled with \(n = 3\) vs \(n = 100\) using normal error term
+\(\varepsilon \thicksim \mathcal{N}(0, 1)\).
+\begin{itemize}
+    \item We can see that the distribution with \(n = 100\) is much narrower
+    than the distribution with \(n = 3\).
+    \item We see a higher variance in the mean with \(n = 3\) because
+    denominator is a smaller number (smaller sample size).
+    \item As the sample size increases, the denominator increases and the
+    variance decreases (because the numerator does not grow by as much).
+\end{itemize}
+\includegraphics*[width=\linewidth]{graph5c}
+Plot from data sampled with \(n = 3\) vs \(n = 100\) using normal error term
+\(\varepsilon \thicksim \mathcal{N}(0, 100)\).
+\begin{itemize}
+    \item We can see that the distribution with \(n=3\) and
+    \(\varepsilon \thicksim \mathcal{N}(0, 100)\) has a wider distribution
+    compared to \(\varepsilon \thicksim \mathcal{N}(0, 1)\) for same data size.
+    \item This is because of the huge variance in the error term.
+    \item But as the sample size increases to 100, we can see that the variance
+    has decreased drastically and is similar to the distribution with
+    \(\varepsilon \thicksim \mathcal{N}(0, 1)\) for the same sample size.
+    \item Even with a high variance in the error term, the mean of 100 numbers
+    is closer to the population mean and the variance decreases as the sample
+    size increases.
+\end{itemize}
+
+\newpage
+\includegraphics*[width=\linewidth]{graph5d}
+Plot from data sampled with \(n = 3\) vs \(n = 100\) using Chi Squared error term
+\(\varepsilon \thicksim \chi^2(10)\).
+\begin{itemize}
+    \item We can see that the distribution with \(n=100\) is narrower compared
+    to the distribution with \(n=3\).
+    \item Both of these distributions are approximately normal despite the
+    population distribution being Chi Squared.
+    \item This is because of the Central Limit Theorem which states that the
+    distribution of sample means is approximately normal regardless of the
+    population distribution.
+\end{itemize}
+\subsubsection*{Conclusion}
+\begin{itemize}
+    \item In summary, the distribution with \(n=3\) and \(\varepsilon \thicksim \mathcal{N}(0, 100)\)
+    has the widest distribution due to a high variance in the error term and a small sample size.
+    \item As the sample size increases, the variance decreases and the distribution
+    is approximately normal.
+\end{itemize}
+
+\newpage
+\section*{6.a}
+\includegraphics*[width=\linewidth]{graph6a}
+\begin{itemize}
+    \item In the figure above (a), we can see a plot of means from 20 datasets
+    sampled from the same distribution, along with their confidence interval.
+    \item Each dot on the line represents the mean of one of the 20 datasets and
+    the horizontal line around each mean represents the 95\% confidence
+    interval for that sample mean.
+    \item A confidence interval of 95\% means on an average 95\% of the sample
+    means will capture the population mean in their confidence interval.
+    \item In the sample above, we can see that only 2 out of 20 intervals fail
+    to capture the population mean (as expected).
+\end{itemize}
+
+\newpage
+\section*{6.b}
+\includegraphics*[width=\linewidth]{graph6b}
+Plot for data sampled with n = 3 and confidence interval of 95\%.
+\begin{itemize}
+    \item From the plot above, we can see that not all the confidence intervals
+    capture the true slope.
+    \item This is expected, as we set the confidence interval to 95\%.
+    \item This means that on an average, 5\% of the intervals will not capture
+    the true slope.
+    \item By setting a higher confidence interval, we can reduce the number of
+    intervals that fail to capture the true slope - but this will result in
+    wider confidence intervals.
+\end{itemize}
+
+\newpage
+\section*{6.c}
+\includegraphics*[width=\linewidth]{graph6c}
+Plot for data sampled with n = 3 and confidence interval of 99\%.
+\begin{itemize}
+    \item From the plot we can see that the confidence intervals are wider than
+    the previous plot. (Ranging from -20 to 20 as opposed to -5 to 10 in the
+    previous plot).
+    \item This is because we set a higher confidence interval of 99\%. This
+    means on an average, only 1\% of the intervals will not capture the true slope.
+    \item By setting a higher confidence interval, we reduced the number of intervals
+    that do not capture the slope, but the intervals are huge and do not provide
+    much information.
 \end{itemize}
 \end{document}
