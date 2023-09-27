@@ -132,7 +132,7 @@ The plot above shows two datasets sampled from the same distribution
     \item They have a similar slope and intercept.
     \item There is a small difference between each data point of either dataset
     due to the error term \(\varepsilon\).
-    \item The value of error term \(\varepsilon\) is different for each dataset
+    \item The value of error term \(\varepsilon\) is different for each point
     as they are drawn independently from the same distribution.
 \end{itemize}
 
@@ -263,5 +263,106 @@ Plot for data sampled with n = 3 and confidence interval of 99\%.
     \item By setting a higher confidence interval, we reduced the number of intervals
     that do not capture the slope, but the intervals are huge and do not provide
     much information.
+\end{itemize}
+
+\newpage
+\section*{6.d}
+\includegraphics*[width=\linewidth]{graph6d}
+The plot above shows the 95\% confidence interval and prediction interval for the
+mean \(E\{Y_h|X_h = 1\}\).
+\\ As we can see, the prediction interval is wider than the confidence interval.
+\begin{itemize}
+    \item The confidence interval estimates the range within which the population
+    mean (average) of the response variable (Y) is likely to fall
+    with a certain level of confidence.
+    \item The width of the confidence interval is primarily determined by the
+    sample size and the variability of the data (residuals). As sample size increases,
+    the width of the confidence interval decreases.
+    \item The prediction interval for individual observations (PI) estimates the
+    range within which an individual new observation (Yh) is likely to fall,
+    given a specific value of X.
+    \item Prediction interval accounts for both the uncertainty in estimating the
+    mean (as in the CI) and the variability of individual data points around the mean.
+    Hence it has a wider range.
+\end{itemize}
+
+\newpage
+\section*{6.e}
+\includegraphics*[width=\linewidth]{graph6e}
+The plot above shows the 95\% confidence interval and prediction interval for the
+mean \(E\{Y_h|X_h = 5\}\).
+\begin{itemize}
+    \item The confidence interval and prediction interval for \(X_h = 5\) are
+    wider than the intervals for \(X_h = 1\).
+    \item When we extrapolate to new X values far from the observed range,
+    the uncertainty in estimating the mean and prediction intervals increases.
+    \item  This is because model accounts for the variability in mean and
+    individual observations - which becomes significant as we extrapolate.
+\end{itemize}
+
+\newpage
+\section*{7.a}
+\includegraphics*[width=\linewidth]{graph7a}
+\begin{itemize}
+    \item In the plot above, we can see a histogram of p-values for null
+    hypothesis \(H_0: \beta_1 = 0\).
+    \item The data has been sampled from a distribution with a slope of \(\beta_1 = 0\).
+    \item Since the true slope is zero \(H_0\) is true, we see a uniform distribution
+    of p-values between 0 and 1.
+    \item This is because under the null hypothesis, there is no true effect of X on Y,
+    and any observed associations are due to random sampling variability.
+\end{itemize}
+
+\newpage
+\section*{7.b}
+\includegraphics*[width=\linewidth]{graph7b}
+\begin{itemize}
+    \item The plot above shows the importance of sample size in hypothesis testing
+    and p-values of small sample sizes can be misleading.
+    \item For the sample size of 10, The histogram of p-values shows that most
+    p-values are skewed towards 1.0, indicating that the test often fails to
+    reject the null hypothesis (no significant difference between the samples).
+    \item As sample size increases, we can see that the histogram is more uniform
+    indicating that larger samples are more likely to detect true differences and
+    produce lower P-values
+    \item As we reach a sample size of 100, we can see that \(H_0\) is rejected.
+    This suggests that with a larger sample size, the test not only detects differences
+    but also provides highly significant results.
+    \item  In practical terms, this means that larger sample sizes increase the
+    power of your statistical tests and improve your ability to detect true
+    effects or differences when they exist.
+\end{itemize}
+
+\newpage
+\section*{7.c}
+\includegraphics*[width=\linewidth]{graph7c}
+Above is a plot of p-values for 1000 studies with varying sample sizes, sampled
+from the same distribution \(5 + 0.1 . X + \varepsilon\). Where \(\varepsilon \thicksim \mathcal{N}(0, 1)\).
+\begin{itemize}
+    \item From the plots above we can see that p-values of hypothesis tests
+    do not provide accurate information for small sample sizes. Even though the
+    true slope is 0.1, the hypothesis test does not seem to reject the null
+    hypothesis.
+    \item As a result, if we were to reproduce a study with a small sample size,
+    we would get a different p-value and a different conclusion.
+    \item By increasing the sample sizes, we can get more accurate p-values
+    that lead to consistent conclusions.
+    \item From the plots above, we can deduce that having a sample size of 30
+    or more will lead to consistent conclusions over multiple studies.
+\end{itemize}
+
+\newpage
+\section*{7.d}
+\includegraphics*[width=\linewidth]{graph7d}
+Above is a plot of estimated slopes for 1000 studies with varying sample sizes,
+sampled from the same distribution \(5 + 0.1 . X + \varepsilon\). Where \(\varepsilon \thicksim \mathcal{N}(0, 1)\).
+\\
+Estimated slopes have been plotted only for significant hypothesis tests. \((p-value < 0.05)\)
+\begin{itemize}
+    \item From the plots above, we can see the estimated slopes are not closer
+    to the true slope. Since the true slope is much smaller than the variance
+    of the random term, we cannot estimate the population slope accurately.
+    \item Hence, it is not ideal to plot only the significant hypothesis tests
+    as they do not provide accurate estimation of the population parameters.
 \end{itemize}
 \end{document}
