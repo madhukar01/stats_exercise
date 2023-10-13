@@ -116,4 +116,68 @@ we're trying to understand how y changes as x changes.
 \end{itemize}
 In conclusion, we need to use multiple methods such as visualization, lack of fit
 tests, and co-efficient determinations to validate the model assumptions.
+
+\newpage
+\section*{Question 3}
+\subsection*{3.a}
+\includegraphics*[width=\linewidth]{graph3a}
+The Bonferroni adjustment controls the Familywise Error Rate (FWER).
+This is the probability of making at least one Type I error when performing
+multiple statistical tests.
+\\
+By adjusting the significance level with the Bonferroni method,
+we ensure that our overall chance of incorrectly rejecting a true null
+hypothesis remains at the specified level (like 5\%).
+
+\newpage
+\subsection*{3.b}
+\includegraphics*[width=\linewidth]{graph3b}
+The Working-Hotelling confidence method is used to construct confidence
+intervals for the difference between the means of two multivariate data sets.
+\\
+It controls for the precision of the estimate of the difference between the means.
+It provides a range of values within which we can be reasonably confident that
+the true difference between the means lies.
+
+\newpage
+\subsection*{3.c}
+For a simple linear regression model using least squares estimation,
+\[Y = \beta_0 + \beta_1 . X + \epsilon\]
+The estimates for \(\beta_0\) and \(\beta_1\) are given by:
+\[b_1 = \frac{\Sigma(X_i - \bar{X})(Y_i - \bar{Y})}{\Sigma(X_i - \bar{X})^2}\]
+\[b_0 = \bar{Y} - b_1.X\]
+and \(\epsilon\) is the error term.
+\\[\baselineskip]
+\[cov(b_0, b_1) = E[(b_0 - E[b_0])(b_1 - E[b_1])]\]
+\[cov(b_0, b_1) = E[b_0b_1] - E[b_0].E[b_1]\]
+Substituting for \(b_0\),
+\[E[b_0 b_1] = E[(\bar{Y} - b_1 \bar{X})(b_1)]\]
+\[= E[\bar{Y}b_1 - b_1^2 \bar{X}]\]
+\[= \bar{Y} E[b_1] - \bar{X} E[b_1^2]\]
+\\
+We know \(E[b_1] = \beta_1\) and
+\[E[b_0] = E[\bar{Y} - b_1 \bar{X}]\]
+\[= \bar{Y} - \bar{X}E[b_1] = \bar{Y} - \bar{X}.\beta_1\]
+Now we have,
+\[E[b_0 b_1] = \beta_1\bar{Y} - \bar{X} E[b_1^2]\]
+\[E[b_0].E[b_1] = (\bar{Y} - \bar{X}.\beta_1)\beta_1\]
+\\
+Substituting in \(cov(b_0, b_1)\) we have,
+\[cov(b_0, b_1) = \beta_1\bar{Y} - \bar{X} E[b_1^2] - (\bar{Y} - \bar{X}.\beta_1)\beta_1\]
+\[= \beta_1\bar{Y} - \bar{X} E[b_1^2] - \beta_1\bar{Y} + \bar{X}.\beta_1^2\]
+\[= \bar{X}.\beta_1^2 - \bar{X} E[b_1^2]\]
+\\
+We need a formula for \(E[b_1^2]\)
+\[Var(b1) = E[b_1^2] - (E[b_1])^2 = E[b_1^2] - \beta_1^2\]
+\\From linear regression,
+\[Var(b_1) = \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2}\]
+\[E[b_1^2] - \beta_1^2 = \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2}\]
+\[E[b_1^2] = \beta_1^2 + \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2}\]
+
+\newpage
+Substituting into \(cov(b_0, b_1)\) we have,
+\[cov(b_0, b_1) = \bar{X}.\beta_1^2 - \bar{X} E[b_1^2]\]
+\[=\bar{X}.\beta_1^2 - \bar{X} (\beta_1^2 + \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2})\]
+\[= - \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2}\bar{X}\]
+\[cov(b_0, b_1) = -\bar{X}.Var(b_1)\]
 \end{document}
