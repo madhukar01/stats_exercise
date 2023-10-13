@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{{./images}}
+
+\author{Madhukara S Holla}
+\title{Statistics Exercise 2}
+\date{13th Octoner 2023}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{Question 1}
+Project members: Madhukara S Holla (Master of Science in Computer Science, 1st Year)
+\\
+Project description: NA
+
+\newpage
+\section*{Question 2}
+\subsection*{2.a}
+\subsubsection*{Anscombe's Dataset 1}
+\begin{itemize}
+    \item Observed pearson co-efficient: 0.8164
+    \item Observed co-efficient of multiple determination: 0.6665
+\end{itemize}
+\includegraphics*[width=\linewidth]{graph2a1}
+
+\newpage
+\subsection*{2.a}
+\subsubsection*{Anscombe's Dataset 2}
+\begin{itemize}
+    \item Observed pearson co-efficient: 0.8162
+    \item Observed co-efficient of multiple determination: 0.6662
+\end{itemize}
+\includegraphics*[width=\linewidth]{graph2a2}
+
+\newpage
+\subsection*{2.a}
+\subsubsection*{Anscombe's Dataset 3}
+\begin{itemize}
+    \item Observed pearson co-efficient: 0.8163
+    \item Observed co-efficient of multiple determination: 0.6663
+\end{itemize}
+\includegraphics*[width=\linewidth]{graph2a3}
+
+\newpage
+\subsection*{2.a}
+\subsubsection*{Anscombe's Dataset 4}
+\begin{itemize}
+    \item Observed pearson co-efficient: 0.8165
+    \item Observed co-efficient of multiple determination: 0.6667
+\end{itemize}
+\includegraphics*[width=\linewidth]{graph2a4}
+
+\newpage
+\subsection*{2.b}
+Lack of fit tests for Anscombe's datasets.
+\\
+Datasets grouped by x values (2 values per group)
+\\[\baselineskip]
+Null Hypothesis \(H_0\): A simple linear model is adequate to explain the systematic
+variations in the data.
+\\[\baselineskip]
+Alternate Hypothesis \(H_a\): A linear model is not adequate and a nonlinear model
+is required to capture the systematic variations in the data.
+
+\subsubsection*{Anscombe's Dataset 1}
+P value: 0.86 - Fail to reject \(H_0\).
+\\
+No significant lack of fit.The dataset appears to be a simple linear relationship,
+and a linear regression model seems appropriate for this dataset.
+
+\subsubsection*{Anscombe's Dataset 2}
+P value: 0.03 - Reject \(H_0\) in favor of \(H_a\).
+\\
+Significant lack of fit. The data clearly follows a non-linear (quadratic)
+relationship, indicating that the linear model does not capture all systematic
+variations in the dataset.
+
+\subsubsection*{Anscombe's Dataset 3}
+P value: 0.83 - Fail to reject \(H_0\).
+\\
+The outlier is ignored when we group the data by x values in pairs of 2.
+\\
+No significant lack of fit. Since the influence of the outlier is ignored while
+calculating lack of fit, the dataset appears to be a simple linear relationship.
+
+\subsubsection*{Anscombe's Dataset 4}
+P value: 0.04 - Reject \(H_0\) in favor of \(H_a\).
+\\
+The outlier is ignored when we group the data by x values in pairs of 2.
+\\
+Significant lack of fit. Test is not be appropriate due to the nature of the data.
+If forced, likely a significant lack of fit.
+\\[\baselineskip]
+The lack of fit test assumes that there's some variation in the independent variable (x)
+that corresponds to variation in the dependent variable (y).
+In Dataset 4, for all but one observation, there's no variation in x.
+This goes against the fundamental premise of regression that
+we're trying to understand how y changes as x changes.
+
+\newpage
+\subsection*{2.c}
+\begin{itemize}
+    \item Patterns in residual plots can indicate non-linearity and outliers,
+    helping us to identify problems with the model.
+    \item Lack of fit tests provide a formal statistical test to validate
+    the model assumptions.
+    \item But the lack of fit tests require replicate observations in the data
+    which may not be available, or it may be inappropriate to run on datasets
+    like Dataset 4.
+    \item Both pearson coefficient and co-efficient of multiple determination
+    do not clearly indicate the goodness of fit of the model. They just indicate
+    the strength of the linear relationship and proportion of variance explained
+    by the model respectively.
+\end{itemize}
+In conclusion, we need to use multiple methods such as visualization, lack of fit
+tests, and co-efficient determinations to validate the model assumptions.
+\end{document}
