@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \graphicspath{{./images}}
 
 \author{Madhukara S Holla}
@@ -180,4 +181,82 @@ Substituting into \(cov(b_0, b_1)\) we have,
 \[=\bar{X}.\beta_1^2 - \bar{X} (\beta_1^2 + \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2})\]
 \[= - \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2}\bar{X}\]
 \[cov(b_0, b_1) = -\bar{X}.Var(b_1)\]
+
+\newpage
+\section*{Question 4}
+\subsection*{4.a}
+Covariance matrix for the data:
+\[\begin{bmatrix}
+    25.23 & 24.29 & 8.39 & 21.63 \\
+    24.29 & 27.4  & 1.62 & 23.47 \\
+    8.39  & 1.62  & 13.3 & 2.65  \\
+    21.63 & 23.47 & 2.65 & 26.07 \\
+    \end{bmatrix}\]
+Row 1: Covariance of Triceps with Triceps, Thigh, Midarm, Bodyfat
+\\
+Row 2: Covariance of Thigh with Triceps, Thigh, Midarm, Bodyfat
+\\
+Row 3: Covariance of Midarm with Triceps, Thigh, Midarm, Bodyfat
+\\
+Row 4: Covariance of Bodyfat with Triceps, Thigh, Midarm, Bodyfat
+
+\newpage
+\subsection*{4.b}
+\subsubsection*{Triceps as a linear predictor of Bodyfat}
+\includegraphics*[width=\linewidth]{graph4b1}
+Summary of the data:
+\begin{itemize}
+    \item Slope: 0.8572
+    \item Intercept: -1.4961
+    \item Mean squared error: 7.9511
+    \item \(R^2\): 0.7111
+    \item The positive value of the slope signifies a positive linear association
+    between Triceps and Body fat.
+    \item An MSE of 7.9511 indicates there is a significant amount of error in
+    the estimation of Bodyfat from Triceps.
+    \item \(R^2\) value of 0.71 indicates that \(\approx\) 70\% of the variability
+    in Bodyfat can be explained by Triceps.
+\end{itemize}
+From the graph and summary, Triceps show a strong linear association with Bodyfat.
+\newpage
+\subsubsection*{Thigh as a linear predictor of Bodyfat}
+\includegraphics*[width=\linewidth]{graph4b2}
+Summary of the data:
+\begin{itemize}
+    \item Slope: 0.8565
+    \item Intercept: -23.6345
+    \item Mean squared error: 6.3013
+    \item \(R^2\): 0.7710
+    \item The positive value of the slope signifies a positive linear
+    association between Thigh and Body fat.
+    \item An MSE of 6.3013 indicates there is still error in the estimation
+    of body fat, but the error is less than that of Triceps.
+    \item \(R^2\) value of 0.77 indicates that \(\approx\) 77\% of the variability
+    in Bodyfat can be explained by Thigh. This association is even stronger than
+    that of Triceps.
+\end{itemize}
+From the graph and summary, Thigh show a strong linear association with Bodyfat.F
+From a lower MSE and higher \(R^2\) value, we can conclude that Thigh is a better
+predictor of Bodyfat than Triceps.
+
+\newpage
+\subsubsection*{Midarm as a linear predictor of Bodyfat}
+\includegraphics*[width=\linewidth]{graph4b3}
+Summary of the data:
+\begin{itemize}
+    \item Slope: 0.8565
+    \item Intercept: -23.6345
+    \item Mean squared error: 6.3013
+    \item R square: 0.0203
+    \item The positive value of the slope signifies a positive linear relationship
+    with the Bodyfat. But from the graph we can see that the model has several
+    outliers and does not fit the data well.
+    \item MSE term indicates a similar variance to that of Triceps and Thigh, but
+    given the low \(R^2\) value, this can be misleading.
+    \item \(R^2\) value of 0.02 is considerably low and indicates that Midarm is
+    not a good predictor of Bodyfat.
+\end{itemize}
+Despite the slope and MSE values for midarm being similar to that of Triceps and
+Thigh, the graph and \(R^2\) value indicate that Midarm does not have a strong
+linear association with Bodyfat.
 \end{document}
