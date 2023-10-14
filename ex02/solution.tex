@@ -14,7 +14,7 @@
 \section*{Question 1}
 Project members: Madhukara S Holla (Master of Science in Computer Science, 1st Year)
 \\
-Project description: NA
+Project description: Not decided yet.
 
 \newpage
 \section*{Question 2}
@@ -123,22 +123,32 @@ tests, and co-efficient determinations to validate the model assumptions.
 \subsection*{3.a}
 \includegraphics*[width=\linewidth]{graph3a}
 The Bonferroni adjustment controls the Familywise Error Rate (FWER).
-This is the probability of making at least one Type I error when performing
-multiple statistical tests.
+To control FWER when making multiple comparisons, Bonferroni correction adjusts
+the significance level of each individual test.
 \\
-By adjusting the significance level with the Bonferroni method,
-we ensure that our overall chance of incorrectly rejecting a true null
-hypothesis remains at the specified level (like 5\%).
+So we are controlling the error rate in individual tests, to control the
+error rate in the family of tests.
 
 \newpage
 \subsection*{3.b}
 \includegraphics*[width=\linewidth]{graph3b}
+In this method we are controlling the error rate of the entire regression curve.
+\\
 The Working-Hotelling confidence method is used to construct confidence
 intervals for the difference between the means of two multivariate data sets.
-\\
-It controls for the precision of the estimate of the difference between the means.
 It provides a range of values within which we can be reasonably confident that
 the true difference between the means lies.
+\\[\baselineskip]
+The efficiency of the procedure depends on the purpose:
+If we are making inferences at specific values of X1,
+then individual confidence intervals (Bonferroni)
+might be narrower and therefore more "efficient" in the sense of precision.
+
+If we want to make inferences about the entire regression line,
+then the Working-Hotelling band is more efficient because it provides
+simultaneous coverage for the entire line.
+Individual confidence intervals wouldn't be appropriate for this broader
+type of inference.
 
 \newpage
 \subsection*{3.c}
@@ -181,7 +191,20 @@ Substituting into \(cov(b_0, b_1)\) we have,
 \[=\bar{X}.\beta_1^2 - \bar{X} (\beta_1^2 + \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2})\]
 \[= - \frac{\sigma^2}{\Sigma(X_i - \bar{X})^2}\bar{X}\]
 \[cov(b_0, b_1) = -\bar{X}.Var(b_1)\]
-
+\\[\baselineskip]
+Importance for multiple testing:
+\begin{itemize}
+    \item If we are simultaneously estimating multiple parameters, understanding
+    covariance between the parameters is important.
+    \item If the estimates are highly correlated or anti-correlated, then testing
+    the hypotheses without accounting for this correlation can lead to incorrect
+    inferences.
+\end{itemize}
+If the mean of predictor \(\bar{X} = 0\), then \(Cov(b_0, b_1) = 0\).
+This means that the estimates for \(\beta_0\) and \(\beta_1\) are uncorrelated.
+\\
+This simplifies the analysis and interpretations as we can interpret or test
+each coefficient without considering the other.
 \newpage
 \section*{Question 4}
 \subsection*{4.a}
