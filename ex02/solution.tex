@@ -244,21 +244,20 @@ predictor of Bodyfat than Triceps.
 \includegraphics*[width=\linewidth]{graph4b3}
 Summary of the data:
 \begin{itemize}
-    \item Slope: 0.8565
-    \item Intercept: -23.6345
-    \item Mean squared error: 6.3013
+    \item Slope: 0.1994
+    \item Intercept: 14.6867
+    \item Mean squared error: 26.9632
     \item \(R^2\) value: 0.0203
-    \item The positive value of the slope signifies a positive linear relationship
-    with the Bodyfat. But from the graph we can see that the model has several
-    outliers and does not fit the data well.
-    \item MSE term indicates a similar variance to that of Triceps and Thigh, but
-    given the low \(R^2\) value, this can be misleading.
+    \item Low value of slope indicates a weak linear association between Midarm
+    and Bodyfat.
+    \item A high MSE term indicates that there is a significant amount of error
+    in the estimation of Bodyfat from Midarm.
     \item \(R^2\) value of 0.02 is considerably low and indicates that Midarm is
     not a good predictor of Bodyfat.
 \end{itemize}
-Despite the slope and MSE values for midarm being similar to that of Triceps and
-Thigh, the graph and \(R^2\) value indicate that Midarm does not have a strong
-linear association with Bodyfat.
+From the graph and summary, Midarm shows a weak linear association with Bodyfat.
+From a high MSE and low \(R^2\) value, we can conclude that Midarm is not a good
+predictor of Bodyfat.
 
 \newpage
 \subsection*{4.c}
@@ -327,10 +326,9 @@ Summary of multivariate linear regression model with \(Tricep\), \(Thigh\) and
     \item Coefficient for \(Midarm\): -2.1861
     \item Mean squared error: 6.1503
     \item \(R^2\) value: 0.8013
-    \item Value of \(R^2\) is higher than that of previous models, indicating
-    that adding Midarm provides additional predictive power.
-    \item The change in \(R^2\) is only marginal compared to the model with
-    only \(Tricep\) and \(Thigh\).
+    \item Value of \(R^2\) is marginally higher than that of higher than that
+    of previous models, indicating that midarm is not a significant predictor
+    of body fat.
     \item The coefficients have changed notably from the bivariate regression.
     The negative coefficient for thigh and midarm, indicates that as these
     measurements increase, the predicted body fat decreases,
@@ -363,9 +361,13 @@ We can propose a linear regression model expressed as:
 \[Y = \beta_0 + \beta_1. X_1 + \beta_2. X_2 + \epsilon\]
 where,
 \begin{itemize}
+    \item \(Y\) is the maturation of the child
+    \item \(X_1\) represents the age of the child
+    \item \(X_2\) represents the number of older siblings
     \item \(\beta_0\) is the y-intercept
     \item \(\beta_1\) is the regression coefficient for Age.
     \item \(\beta_2\) is the regression coefficient for number of older siblings.
+    \item \(\epsilon\) is the error term.
 \end{itemize}
 Assumptions regarding the effect of number of older siblings on the response variable:
 \begin{itemize}
@@ -382,4 +384,83 @@ Assumptions regarding the effect of number of older siblings on the response var
     \item Normality: The residuals are normally distributed.
 \end{itemize}
 
+\newpage
+\subsection*{5.b}
+\subsubsection*{Including the number of older siblings as two indicator variables}
+By treating number of older siblings as indicator variables, we are essentially
+breaking down number of siblings into categories and representing each
+with a separate variable.
+\\
+Since number of older siblings can range from 0 to 2, we can create two indicator
+variables and represent the regression model as:
+\[Y = \beta_0 + \beta_1. X_1 + \beta_2. I_1 + \beta_3. I_3 + \epsilon\]
+where,
+\begin{itemize}
+    \item \(I_1\) is an indicator variable: 1 if number of older siblings is 1, 0 otherwise.
+    \item \(I_2\) is an indicator variable: 1 if number of older siblings is 2, 0 otherwise.
+    \item \(\beta_2\) is the regression coefficient for \(I_1\).
+    \item \(\beta_3\) is the regression coefficient for \(I_2\).
+    \item \(Y, X_1, \beta_0, \beta_1, \epsilon\) are the same as in the previous case.
+\end{itemize}
+By considering number of older siblings as indicator variables,
+we are effectively creating multiple models within a single equation.
+\begin{itemize}
+    \item Child with 0 siblings: \(Y = \beta_0 + \beta_1. X_1 + \epsilon\)
+    \item Child with 1 sibling: \(Y = \beta_0 + \beta_2 + \beta_1.X_1 + \epsilon\)
+    \item Child with 2 siblings: \(Y = \beta_0 + \beta_3 + \beta_1.X_1 + \epsilon\)
+\end{itemize}
+Each of these models represent different scenarios of number of older siblings.
+\\[\baselineskip]
+By using indicator variables, we can model different intercepts for each level
+of the categorical variable (number of siblings) while keeping the same slope for
+age across all the levels.
+\\[\baselineskip]
+Assumptions regarding the effect of number of older siblings on the response variable:
+\begin{itemize}
+    \item Linearity:  The relationship between the presence or absence of a specific
+    number of older siblings (as denoted by indicator variables) and maturation is linear.
+    \item Additivity: The combined effect of Age, having 1 or 2 older siblings
+    is the sum of their individual effects.
+    \item No multicollinearity: \(I_1\) and \(I_2\) are not highly correlated.
+    In this case, they are mutually exclusive.
+    \item In addition, Independence, constant variance and normality assumptions
+    are the same as in the previous case.
+\end{itemize}
+
+\newpage
+\subsection*{5.c}
+\subsubsection*{Interactions along with indicator variables}
+Without interaction term, we are assuming that the effect of age and number
+of siblings is independent of each other. This would mean the number of siblings
+has the same effect on maturity irrespective of the age of the child.
+\\
+This can be solved by adding an interaction term between age and number of siblings.
+\\[\baselineskip]
+We can represent the regression model as:
+\[Y = \beta_0 + \beta_1. X_1 + \beta_2. I_1 + \beta_3. I_2 + \beta_4.(X_1.I_1) + \beta_5(X_1.I_2) + \epsilon\]
+where,
+\begin{itemize}
+    \item \(X_1.I_1\) is the interaction between age and indicator for 1 older sibling
+    \item \(X_1.I_2\) is the interaction between age and indicator for 2 older siblings
+    \item \(\beta_4\) is the regression coefficient for \(X_1.I_1\)
+    \item \(\beta_5\) is the regression coefficient for \(X_1.I_2\)
+    \item \(Y, X_1, \beta_0, \beta_1, \beta_2, \beta_3, I_1, I_2, \epsilon\) are the
+    same as in the previous case.
+\end{itemize}
+With this model, we can determine whether relationship between age and maturation
+changes depending on the number of older siblings. If the interaction terms are
+significant, it suggests that there is a differential effect.
+\\[\baselineskip]
+Assumptions regarding the effect of number of older siblings on the response variable:
+\begin{itemize}
+    \item Linearity: The relationship between the predictors (age, indicator variables,
+    interaction terms) and maturation is linear.
+    \item Additivity: This assumption is relaxed because of the inclusion of
+    interaction terms. The model implies that the effect of one predictor may
+    not be strictly additive with the effect of another predictor.
+    \item No multicollinearity: The interaction term by nature can add some degree
+    of multicollinearity. But individual predictors are not highly correlated.
+    \item In addition, Independence, constant variance and normality assumptions
+    are the same as in the previous case.
+\end{itemize}
 \end{document}
