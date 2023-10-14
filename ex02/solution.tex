@@ -247,7 +247,7 @@ Summary of the data:
     \item Slope: 0.8565
     \item Intercept: -23.6345
     \item Mean squared error: 6.3013
-    \item R square: 0.0203
+    \item \(R^2\) value: 0.0203
     \item The positive value of the slope signifies a positive linear relationship
     with the Bodyfat. But from the graph we can see that the model has several
     outliers and does not fit the data well.
@@ -259,4 +259,34 @@ Summary of the data:
 Despite the slope and MSE values for midarm being similar to that of Triceps and
 Thigh, the graph and \(R^2\) value indicate that Midarm does not have a strong
 linear association with Bodyfat.
+
+\newpage
+\subsection*{4.c}
+Why we may want to fit a multi-variate model:
+\begin{itemize}
+    \item To capture non-linearity: By including term \({Tricep}^2\), we are
+    exploring the possibility of a non-linear relationship between Tricep and
+    Bodyfat.
+    \item Model flexibility: Adding polynomial terms offers more flexibility
+    in capturing patterns in the data. This can lead to better predictions if
+    underlying relationship is non-linear.
+\end{itemize}
+Summary of multivariate linear regression model with \(Tricep\) and \({Tricep}^2\):
+\begin{itemize}
+    \item Intercept: -6.1523
+    \item Coefficient for \(Tricep\): 1.2612
+    \item Coefficient for \({Tricep}^2\): -0.0083
+    \item Mean squared error: 8.3777
+    \item \(R^2\) value: 0.7125
+\end{itemize}
+From the summary, we can see that the co-efficient for \({Tricep}^2\) is
+\(\approx\) 0. This means that the relationship between Tricep and Bodyfat is
+linear.
+\\
+Due to this, the value of \(R^2\) is similar to that of the simple linear model
+with Tricep as a predictor. This indicates that the multivariate model does not
+offer any significant improvement over the simple linear model.
+
+\newpage
+\subsection*{4.d}
 \end{document}
