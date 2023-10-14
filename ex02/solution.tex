@@ -339,4 +339,19 @@ Summary of multivariate linear regression model with \(Tricep\), \(Thigh\) and
 In conclusion, adding all the predictors has improved the predictive power of
 the model, but at the cost of complexity. The substantial change in coefficients
 when adding another predictor suggests possible multicollinearity.
+
+\newpage
+\subsection*{4.f}
+If predictors are orthogonal in multivariate regression:
+\begin{itemize}
+    \item Coefficients will be stable: Adding or removing a predictor does not
+    change the coefficients of other predictors.
+    \item Clear interpretability: coefficients will directly indicate the effect
+    of each predictor on the response variable (unaffected by other predictors).
+    \item In our specific case,the coefficient for \(Tricep\)  in three predictor
+    model would remain close to the value in the bivariate model. (similarly for thigh).
+    \item Coefficients would not flip signs or show significant changes in magnitude.
+\end{itemize}
+In conclusion, if the predictors were orthogonal: the results would be stable
+and easier to interpret.
 \end{document}
