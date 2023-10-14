@@ -262,7 +262,7 @@ linear association with Bodyfat.
 
 \newpage
 \subsection*{4.c}
-Why we may want to fit a multi-variate model:
+Why we may want to fit a multi-variate model with \(Tricep\) and \({Tricep}^2\):
 \begin{itemize}
     \item To capture non-linearity: By including term \({Tricep}^2\), we are
     exploring the possibility of a non-linear relationship between Tricep and
@@ -289,4 +289,54 @@ offer any significant improvement over the simple linear model.
 
 \newpage
 \subsection*{4.d}
+Why we may want to fit a multi-variate model with \(Tricep\) and \(Thigh\):
+\begin{itemize}
+    \item To capture combined influence: By including both \(Tricep\) and \(Thigh\)
+    as predictors, we are exploring the possibility of a joint influence of both
+    variables on Bodyfat.
+    \item Increase predictive power: A multivariate model may capture more
+    variance in the data and lead to better predictions.
+    \item Reduce omitted variable bias: If \(Tricep\) and \(Thigh\) are correlated,
+    then omitting one of them from the model can lead to omitted variable bias.
+\end{itemize}
+Summary of multivariate linear regression model with \(Tricep\) and \(Thigh\):
+\begin{itemize}
+    \item Intercept: -19.1742
+    \item Coefficient for \(Tricep\): 0.2223
+    \item Coefficient for \(Thigh\): 0.6594
+    \item Mean squared error: 6.4676
+    \item \(R^2\) value: 0.7780
+    \item The coefficient for Tricep drops significantly from the simple linear
+    model. This indicates potential multicollinearity, suggesting that the
+    individual effects of Triceps and Thigh on Body fat are not as strong
+    when considered together.
+    \item Value of \(R^2\) is marginally higher than that of the simple linear
+    model with Thigh as a predictor. This indicates that the additional
+    predictive power of adding Tricep to a model that already contains Thigh
+    is minimal.
+\end{itemize}
+
+\newpage
+\subsection*{4.e}
+Summary of multivariate linear regression model with \(Tricep\), \(Thigh\) and
+\(Midarm\):
+\begin{itemize}
+    \item Intercept: 117.0847
+    \item Coefficient for \(Tricep\): 4.3341
+    \item Coefficient for \(Thigh\): -2.8568
+    \item Coefficient for \(Midarm\): -2.1861
+    \item Mean squared error: 6.1503
+    \item \(R^2\) value: 0.8013
+    \item Value of \(R^2\) is higher than that of previous models, indicating
+    that adding Midarm provides additional predictive power.
+    \item The change in \(R^2\) is only marginal compared to the model with
+    only \(Tricep\) and \(Thigh\).
+    \item The coefficients have changed notably from the bivariate regression.
+    The negative coefficient for thigh and midarm, indicates that as these
+    measurements increase, the predicted body fat decreases,
+    holding other variables constant.
+\end{itemize}
+In conclusion, adding all the predictors has improved the predictive power of
+the model, but at the cost of complexity. The substantial change in coefficients
+when adding another predictor suggests possible multicollinearity.
 \end{document}
