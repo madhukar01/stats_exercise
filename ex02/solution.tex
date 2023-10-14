@@ -354,4 +354,32 @@ If predictors are orthogonal in multivariate regression:
 \end{itemize}
 In conclusion, if the predictors were orthogonal: the results would be stable
 and easier to interpret.
+
+\newpage
+\section*{Question 5}
+\subsection*{5.a}
+\subsubsection*{Including the number of older siblings as a quantitative predictor}
+We can propose a linear regression model expressed as:
+\[Y = \beta_0 + \beta_1. X_1 + \beta_2. X_2 + \epsilon\]
+where,
+\begin{itemize}
+    \item \(\beta_0\) is the y-intercept
+    \item \(\beta_1\) is the regression coefficient for Age.
+    \item \(\beta_2\) is the regression coefficient for number of older siblings.
+\end{itemize}
+Assumptions regarding the effect of number of older siblings on the response variable:
+\begin{itemize}
+    \item Linearity: The relationship between the number of older siblings and
+    maturation is linear. For every additional older sibling, the change in
+    maturation is constant \(\beta_2\)
+    \item No multicollinearity: Age and number of siblings are not be highly
+    correlated.
+    \item Additivity: The combined effect of Age and number of siblings is
+    the sum of their individual effects.
+    \item Independence: The observations are independent of each other. The
+    maturation of one child does not affect the maturation of another.
+    \item Variance of residuals is constant across all values of the predictor.
+    \item Normality: The residuals are normally distributed.
+\end{itemize}
+
 \end{document}

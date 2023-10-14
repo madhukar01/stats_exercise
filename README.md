@@ -1,2 +1,2 @@
-# stats_exercise
-Basic statistics exercises
+# Statistics Exercises
+Statistics exercises for basic concepts and foundations.
